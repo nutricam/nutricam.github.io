@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCam | Download Today</title>
+    <style>
+        @font-face {
+            font-family: 'DM Sans';
+            src: url('./fonts/DMSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'DM Sans';
+            src: url('./fonts/DMSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./fonts/Manrope-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./fonts/Manrope-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #111827 0%, #1F2937 30%, #374151 100%);
+            min-height: 100vh;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Premium background elements */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header section */
+        .header {
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F5D900 100%);
+            color: #111827;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 48px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(16, 185, 129, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 32px;
+        }
+
+        .app-icon img {
+            width: 92px;
+            height: 92px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-headline {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sub-headline {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 1.6;
+            color: #D1D5DB;
+            margin-bottom: 48px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-text {
+            color: #10B981;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 0;
+        }
+
+        .app-store-button {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+
+        .app-store-button:hover {
+            transform: translateY(-4px);
+            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
+        }
+
+        .app-store-button img {
+            height: 72px;
+            width: auto;
+        }
+
+        .features-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            color: #9CA3AF;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10B981;
+            opacity: 0.6;
+        }
+
+        /* Phone mockups section */
+        .showcase-section {
+            padding: 40px 0;
+            position: relative;
+        }
+
+        /* App Store section */
+        .AppStore {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .showcase-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .showcase-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #9CA3AF;
+            max-width: 600px;
+            margin: 0 auto;
+            letter-spacing: 0.3px;
+        }
+
+        .phone-mockups {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .phone-mockup {
+            border-radius: 44px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000000 0%, #1F2937 100%);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(124, 58, 237, 0.3) 50%, rgba(255, 107, 107, 0.3) 100%);
+            border-radius: 46px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone-mockup:hover::before {
+            opacity: 1;
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .phone-mockup.left {
+            transform: perspective(1000px) rotateY(15deg) scale(0.92);
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
+        }
+
+        .phone-mockup.right {
+            transform: perspective(1000px) rotateY(-15deg) scale(0.92);
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
+        }
+
+        .phone-mockup.left:hover {
+            transform: perspective(1000px) rotateY(18deg) scale(0.96) translateY(-8px);
+        }
+
+        .phone-mockup.right:hover {
+            transform: perspective(1000px) rotateY(-18deg) scale(0.96) translateY(-8px);
+        }
+
+        .phone-mockup.center {
+            filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.4));
+            z-index: 2;
+        }
+
+        .phone-mockup img {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .phone-mockup.center img {
+            width: 340px;
+        }
+
+        /* Features section */
+        .features-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border-radius: 32px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+            border-radius: 32px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 32px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background: linear-gradient(135deg, #10B981 0%, #7C3AED 100%);
+            color: white;
+        }
+
+        .feature-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+
+        .feature-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #D1D5DB;
+            letter-spacing: 0.3px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #6B7280;
+            margin-bottom: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #10B981;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .phone-mockups {
+                gap: 40px;
+            }
+            
+            .phone-mockup img {
+                width: 260px;
+            }
+            
+            .phone-mockup.center img {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            .header {
+                padding: 60px 0 30px;
+            }
+            
+            .main-headline {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+            
+            .sub-headline {
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+            
+            .app-icon {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 32px;
+            }
+            
+            .app-icon img {
+                width: 72px;
+                height: 72px;
+            }
+            
+            .showcase-title {
+                font-size: 36px;
+            }
+            
+            .showcase-subtitle {
+                font-size: 18px;
+            }
+            
+            .phone-mockups {
+                flex-direction: column;
+                gap: 32px;
+            }
+            
+            .phone-mockup {
+                transform: none !important;
+                filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3)) !important;
+            }
+            
+            .phone-mockup:hover {
+                transform: translateY(-8px) scale(1.02) !important;
+            }
+            
+            .phone-mockup img {
+                width: 280px;
+            }
+            
+            .phone-mockup.center img {
+                width: 280px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .AppStore {
+                padding: 30px 0;
+            }
+            
+            .features-section {
+                padding: 40px 0;
+                margin: 30px 0;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .main-headline {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+            
+            .sub-headline {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .app-store-button img {
+                height: 56px;
+            }
+            
+            .phone-mockup img {
+                width: 240px;
+            }
+            
+            .feature-card {
+                padding: 32px 24px;
+            }
+        }
+
+        /* Subtle animations */
+        .app-icon {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .phone-mockup {
+            animation: subtleFloat 10s ease-in-out infinite;
+        }
+
+        .phone-mockup.left {
+            animation-delay: -2s;
+        }
+
+        .phone-mockup.right {
+            animation-delay: -4s;
+        }
+
+        .phone-mockup.center {
+            animation-delay: -6s;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: var(--base-transform, none) translateY(0px); }
+            50% { transform: var(--base-transform, none) translateY(-8px); }
+        }
+
+        .phone-mockup.left {
+            --base-transform: perspective(1000px) rotateY(15deg) scale(0.92);
+        }
+
+        .phone-mockup.right {
+            --base-transform: perspective(1000px) rotateY(-15deg) scale(0.92);
+        }
+
+        .phone-mockup.center {
+            --base-transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="premium-badge">
+                ✨ AI-Powered Nutrition
+            </div>
+            
+            <div class="app-icon">
+                <img src="./assets/icon.png" alt="NutriCam App Icon">
+            </div>
+            
+            <h1 class="main-headline">
+                Transform Your Health<br>
+                With <span class="highlight-text">AI-Powered</span> Nutrition
+            </h1>
+            
+            <p class="sub-headline">
+                Not just fitter. Not just thinner. <span class="highlight-text">Actually better.</span> 
+                <br>Clearer mind. More energy. Fewer cravings. Deeper sleep. Skin that glows without filters. 
+            </p>
+        </header>
+        
+        <section class="showcase-section">            
+            <div class="phone-mockups">
+                <div class="phone-mockup left">
+                    <img src="./assets/App Store Screenshot 2.png" alt="Daily Nutrition Summary">
+                </div>
+                <div class="phone-mockup center">
+                    <img src="./assets/App Store Screenshot 3.png" alt="Meal Recognition Interface">
+                </div>
+                <div class="phone-mockup right">
+                    <img src="./assets/App Store Screenshot 4.png" alt="Nutrition History & Trends">
+                </div>
+            </div>
+        </section>
+
+        <section class="AppStore">         
+            <div class="cta-section">
+                <a href="https://apps.apple.com/us/app/nutricam-nutrition-tracker/id6745231558" class="app-store-button" target="_blank" rel="noopener noreferrer">
+                    <img src="./app-store-button.svg" alt="Download on the App Store">
+                </a>
+                
+                <div class="features-preview">
+                    <span>AI Recognition</span>
+                    <div class="feature-dot"></div>
+                    <span>Macro Tracking</span>
+                    <div class="feature-dot"></div>
+                    <span>Health Insights</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Clarity That Feels Like Magic</h3>
+                    <p class="feature-description">
+                        Your food, decoded in seconds.<br>
+                        Snap a meal and instantly see what it’s giving you—and what it’s not.<br>
+                        No logging. No guessing. Just confidence that you’re on track.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Personalized Insight You Can Feel</h3>
+                    <p class="feature-description">
+                        The app doesn’t just track—it translates.<br>
+                        From nutrient trends to deficiency warnings, it helps you connect what you eat to how you feel.<br>
+                        Because better days start with better decisions.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Wellness That Matches Your Standards</h3>
+                    <p class="feature-description">
+                        You care about your body—and your experience.
+                        <br>Everything here feels smooth, intelligent, and elevated.
+                        <br>It’s nutrition tracking, reimagined to fit beautifully into your lifestyle.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#privacy" class="footer-link">Privacy Policy</a>
+                <a href="#terms" class="footer-link">Terms of Service</a>
+                <a href="#support" class="footer-link">Support</a>
+            </div>
+            <p class="footer-text">
+                © 2025 NutriCam. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html> 
