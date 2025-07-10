@@ -24,6 +24,11 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -32,7 +37,6 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--background);
             color: var(--text-primary);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -59,23 +63,25 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        .main-header { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; }
+        .main-header { padding: 32px 0; display: flex; justify-content: center; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo-icon { width: 40px; height: 40px; border-radius: 10px; }
         .logo-text { font-weight: 500; font-size: 20px; color: var(--text-primary); }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-weight: 500; transition: color 0.3s ease; }
-        .nav-links a:hover { color: var(--text-primary); }
 
-        .hero { padding: 100px 0; text-align: center; }
+        .hero { padding: 60px 0; text-align: center; }
         .hero-title {
             font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px;
             background: linear-gradient(135deg, var(--text-primary) 0%, #B0B0C0 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: fadeInDown 1s ease-out;
         }
         .hero-title .highlight {
             background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .hero-subtitle { font-size: 20px; line-height: 1.6; color: var(--text-secondary); max-width: 680px; margin: 0 auto 48px; animation: fadeIn 1.5s ease-out; }
         .cta-button {
@@ -119,7 +125,7 @@
             object-fit: cover;
         }
 
-        .carousel-nav { position: absolute; top: 50%; width: 120%; left: -10%; display: flex; justify-content: space-between; transform: translateY(-50%); z-index: 10; }
+        .carousel-nav { position: absolute; top: 50%; width: 100%; left: 0; display: flex; justify-content: space-between; transform: translateY(-50%); z-index: 10; padding: 0 20px; }
         .carousel-nav button { 
             background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: var(--text-primary);
             border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer;
@@ -134,9 +140,60 @@
         .features { padding: 120px 0; }
         .section-title { text-align: center; font-size: 48px; font-weight: 700; margin-bottom: 80px; }
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-        .feature-card { background: var(--card-background); border: 1px solid var(--card-border); border-radius: 24px; padding: 40px; backdrop-filter: blur(20px); transition: transform 0.3s ease, background 0.3s ease; }
-        .feature-card:hover { transform: translateY(-8px); background: rgba(30, 30, 35, 0.9); }
-        .feature-icon { font-size: 32px; margin-bottom: 24px; }
+
+        .feature-card {
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 50%), var(--card-background);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.4s; }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            border: 1px solid var(--card-border);
+        }
+
         .feature-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
         .feature-description { font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
 
@@ -151,7 +208,7 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 992px) { .hero-title { font-size: 56px; } .features-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .main-header { flex-direction: column; gap: 24px; } .hero { padding: 80px 0; } .hero-title { font-size: 48px; } .hero-subtitle { font-size: 18px; } .section-title { font-size: 40px; } .carousel-nav { width: 100%; left: 0; } }
+        @media (max-width: 768px) { .main-header { flex-direction: column; gap: 24px; } .hero { padding: 40px 0; } .hero-title { font-size: 48px; } .hero-subtitle { font-size: 18px; } .section-title { font-size: 40px; } .carousel-nav { width: 100%; left: 0; } }
         @media (max-width: 480px) { .hero-title { font-size: 36px; } .hero-subtitle { font-size: 16px; } .cta-button { font-size: 16px; padding: 16px 32px; } .nav-links a { margin: 0 12px; } .carousel-nav { display: none; } }
     </style>
 </head>
@@ -164,11 +221,6 @@
             <img src="./assets/icon.png" alt="NutriCam Logo" class="logo-icon">
             <span class="logo-text">NutriCam</span>
         </a>
-        <nav class="nav-links">
-            <a href="#features">Features</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="#support">Support</a>
-        </nav>
     </header>
 
     <main>
@@ -218,8 +270,8 @@
     <footer class="main-footer container" id="support">
         <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Support</a>
+            <!-- <a href="#">Terms of Service</a> -->
+            <a href="mailto:support@nutricam.app">Support</a>
         </div>
         <p class="footer-copyright">© 2025 NutriCam. All Rights Reserved.</p>
     </footer>
