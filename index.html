@@ -3,55 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriCam | Download Today</title>
+    <title>NutriCam | AI-Powered Nutrition</title>
     <style>
-        @font-face {
-            font-family: 'DM Sans';
-            src: url('./fonts/DMSans-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'DM Sans';
-            src: url('./fonts/DMSans-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            src: url('./fonts/Inter-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            src: url('./fonts/Inter-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            src: url('./fonts/Inter-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Manrope';
-            src: url('./fonts/Manrope-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Manrope';
-            src: url('./fonts/Manrope-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+        :root {
+            --background: #0B0B0F;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0B0;
+            --accent-primary: #00F2A9;
+            --accent-secondary: #7F5BFF;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --card-background: rgba(22, 22, 26, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -60,663 +24,295 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #111827 0%, #1F2937 30%, #374151 100%);
-            min-height: 100vh;
-            color: #FFFFFF;
+            background-color: var(--background);
+            color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .background-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1;
+        }
+        .background-glow::before, .background-glow::after {
+            content: ''; position: absolute; filter: blur(150px); opacity: 0.15;
+        }
+        .background-glow::before {
+            background: radial-gradient(circle, var(--accent-primary), transparent 60%);
+            width: 500px; height: 500px; top: -100px; left: -100px;
+            animation: pulse 15s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+        }
+        .background-glow::after {
+            background: radial-gradient(circle, var(--accent-secondary), transparent 60%);
+            width: 500px; height: 500px; bottom: -100px; right: -100px;
+            animation: pulse 15s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate-reverse;
+        }
+
+        @keyframes pulse { 0% { transform: scale(0.8); } 100% { transform: scale(1.2); } }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        .main-header { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; border-radius: 10px; }
+        .logo-text { font-weight: 500; font-size: 20px; color: var(--text-primary); }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .hero { padding: 100px 0; text-align: center; }
+        .hero-title {
+            font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, #B0B0C0 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle { font-size: 20px; line-height: 1.6; color: var(--text-secondary); max-width: 680px; margin: 0 auto 48px; animation: fadeIn 1.5s ease-out; }
+        .cta-button {
+            display: inline-block; background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: #000; padding: 18px 36px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0, 242, 169, 0.2);
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+        .cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0, 242, 169, 0.3); }
+
+        /* --- Showcase Section --- */
+        .showcase { padding: 60px 0; position: relative; }
+        .carousel-container {
             position: relative;
-        }
-
-        /* Premium background elements */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 32px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header section */
-        .header {
-            padding: 80px 0 40px;
-            text-align: center;
-            position: relative;
-        }
-
-        .premium-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #D4AF37 0%, #F5D900 100%);
-            color: #111827;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .app-icon {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 48px;
-            border-radius: 32px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .app-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(16, 185, 129, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 32px;
-        }
-
-        .app-icon img {
-            width: 92px;
-            height: 92px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-headline {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 72px;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .sub-headline {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 22px;
-            line-height: 1.6;
-            color: #D1D5DB;
-            margin-bottom: 48px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.5px;
-        }
-
-        .highlight-text {
-            color: #10B981;
-            font-weight: 500;
-        }
-
-        .cta-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-            margin-bottom: 0;
-        }
-
-        .app-store-button {
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-        }
-
-        .app-store-button:hover {
-            transform: translateY(-4px);
-            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
-        }
-
-        .app-store-button img {
-            height: 72px;
-            width: auto;
-        }
-
-        .features-preview {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            perspective: 1200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 16px;
-            color: #9CA3AF;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
         }
-
-        .feature-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #10B981;
-            opacity: 0.6;
-        }
-
-        /* Phone mockups section */
-        .showcase-section {
-            padding: 40px 0;
+        .carousel-wrapper {
             position: relative;
+            width: 300px; /* Width of the center slide */
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
         }
-
-        /* App Store section */
-        .AppStore {
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .showcase-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .showcase-title {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-            background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .showcase-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 1.6;
-            color: #9CA3AF;
-            max-width: 600px;
-            margin: 0 auto;
-            letter-spacing: 0.3px;
-        }
-
-        .phone-mockups {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            justify-content: center;
-            max-width: 100%;
-            position: relative;
-        }
-
-        .phone-mockup {
-            border-radius: 44px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #000000 0%, #1F2937 100%);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-
-        .phone-mockup::before {
-            content: '';
+        .slide {
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(124, 58, 237, 0.3) 50%, rgba(255, 107, 107, 0.3) 100%);
-            border-radius: 46px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .phone-mockup:hover::before {
-            opacity: 1;
-        }
-
-        .phone-mockup:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-        }
-
-        .phone-mockup.left {
-            transform: perspective(1000px) rotateY(15deg) scale(0.92);
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
-        }
-
-        .phone-mockup.right {
-            transform: perspective(1000px) rotateY(-15deg) scale(0.92);
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
-        }
-
-        .phone-mockup.left:hover {
-            transform: perspective(1000px) rotateY(18deg) scale(0.96) translateY(-8px);
-        }
-
-        .phone-mockup.right:hover {
-            transform: perspective(1000px) rotateY(-18deg) scale(0.96) translateY(-8px);
-        }
-
-        .phone-mockup.center {
-            filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.4));
-            z-index: 2;
-        }
-
-        .phone-mockup img {
             width: 300px;
-            height: auto;
-            display: block;
-        }
-
-        .phone-mockup.center img {
-            width: 340px;
-        }
-
-        /* Features section */
-        .features-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
-            border-radius: 32px;
-            margin: 40px 0;
-            position: relative;
+            height: 600px;
+            border-radius: 40px;
             overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .features-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
-            border-radius: 32px;
+        .carousel-nav { position: absolute; top: 50%; width: 120%; left: -10%; display: flex; justify-content: space-between; transform: translateY(-50%); z-index: 10; }
+        .carousel-nav button { 
+            background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: var(--text-primary);
+            border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer;
+            transition: all 0.3s ease; backdrop-filter: blur(5px);
         }
+        .carousel-nav button:hover { background: rgba(0,0,0,0.6); }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 48px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+        .carousel-pagination { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; }
+        .pagination-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--card-border); cursor: pointer; transition: background 0.3s ease; }
+        .pagination-dot.active { background: var(--accent-primary); }
 
-        .feature-card {
-            text-align: center;
-            padding: 40px 32px;
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
+        .features { padding: 120px 0; }
+        .section-title { text-align: center; font-size: 48px; font-weight: 700; margin-bottom: 80px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .feature-card { background: var(--card-background); border: 1px solid var(--card-border); border-radius: 24px; padding: 40px; backdrop-filter: blur(20px); transition: transform 0.3s ease, background 0.3s ease; }
+        .feature-card:hover { transform: translateY(-8px); background: rgba(30, 30, 35, 0.9); }
+        .feature-icon { font-size: 32px; margin-bottom: 24px; }
+        .feature-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .feature-description { font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
+        .main-footer { padding: 60px 0; border-top: 1px solid var(--card-border); text-align: center; margin-top: 60px; }
+        .footer-links { margin-bottom: 24px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; margin: 0 16px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copyright { color: var(--text-secondary); font-size: 14px; }
 
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 24px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            background: linear-gradient(135deg, #10B981 0%, #7C3AED 100%);
-            color: white;
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .feature-title {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #FFFFFF;
-        }
-
-        .feature-description {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #D1D5DB;
-            letter-spacing: 0.3px;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 80px 0 40px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 80px;
-        }
-
-        .footer-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            color: #6B7280;
-            margin-bottom: 32px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 32px;
-        }
-
-        .footer-link {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #9CA3AF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: #10B981;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            .phone-mockups {
-                gap: 40px;
-            }
-            
-            .phone-mockup img {
-                width: 260px;
-            }
-            
-            .phone-mockup.center img {
-                width: 300px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 24px;
-            }
-            
-            .header {
-                padding: 60px 0 30px;
-            }
-            
-            .main-headline {
-                font-size: 48px;
-                margin-bottom: 20px;
-            }
-            
-            .sub-headline {
-                font-size: 18px;
-                margin-bottom: 40px;
-            }
-            
-            .app-icon {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 32px;
-            }
-            
-            .app-icon img {
-                width: 72px;
-                height: 72px;
-            }
-            
-            .showcase-title {
-                font-size: 36px;
-            }
-            
-            .showcase-subtitle {
-                font-size: 18px;
-            }
-            
-            .phone-mockups {
-                flex-direction: column;
-                gap: 32px;
-            }
-            
-            .phone-mockup {
-                transform: none !important;
-                filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3)) !important;
-            }
-            
-            .phone-mockup:hover {
-                transform: translateY(-8px) scale(1.02) !important;
-            }
-            
-            .phone-mockup img {
-                width: 280px;
-            }
-            
-            .phone-mockup.center img {
-                width: 280px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            
-            .AppStore {
-                padding: 30px 0;
-            }
-            
-            .features-section {
-                padding: 40px 0;
-                margin: 30px 0;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            .main-headline {
-                font-size: 36px;
-                line-height: 1.2;
-            }
-            
-            .sub-headline {
-                font-size: 16px;
-                line-height: 1.5;
-            }
-            
-            .app-store-button img {
-                height: 56px;
-            }
-            
-            .phone-mockup img {
-                width: 240px;
-            }
-            
-            .feature-card {
-                padding: 32px 24px;
-            }
-        }
-
-        /* Subtle animations */
-        .app-icon {
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        .phone-mockup {
-            animation: subtleFloat 10s ease-in-out infinite;
-        }
-
-        .phone-mockup.left {
-            animation-delay: -2s;
-        }
-
-        .phone-mockup.right {
-            animation-delay: -4s;
-        }
-
-        .phone-mockup.center {
-            animation-delay: -6s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% { transform: var(--base-transform, none) translateY(0px); }
-            50% { transform: var(--base-transform, none) translateY(-8px); }
-        }
-
-        .phone-mockup.left {
-            --base-transform: perspective(1000px) rotateY(15deg) scale(0.92);
-        }
-
-        .phone-mockup.right {
-            --base-transform: perspective(1000px) rotateY(-15deg) scale(0.92);
-        }
-
-        .phone-mockup.center {
-            --base-transform: none;
-        }
+        @media (max-width: 992px) { .hero-title { font-size: 56px; } .features-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .main-header { flex-direction: column; gap: 24px; } .hero { padding: 80px 0; } .hero-title { font-size: 48px; } .hero-subtitle { font-size: 18px; } .section-title { font-size: 40px; } .carousel-nav { width: 100%; left: 0; } }
+        @media (max-width: 480px) { .hero-title { font-size: 36px; } .hero-subtitle { font-size: 16px; } .cta-button { font-size: 16px; padding: 16px 32px; } .nav-links a { margin: 0 12px; } .carousel-nav { display: none; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="premium-badge">
-                ✨ AI-Powered Nutrition
-            </div>
-            
-            <div class="app-icon">
-                <img src="./assets/icon.png" alt="NutriCam App Icon">
-            </div>
-            
-            <h1 class="main-headline">
-                Transform Your Health<br>
-                With <span class="highlight-text">AI-Powered</span> Nutrition
-            </h1>
-            
-            <p class="sub-headline">
-                Not just fitter. Not just thinner. <span class="highlight-text">Actually better.</span> 
-                <br>Clearer mind. More energy. Fewer cravings. Deeper sleep. Skin that glows without filters. 
-            </p>
-        </header>
-        
-        <section class="showcase-section">            
-            <div class="phone-mockups">
-                <div class="phone-mockup left">
-                    <img src="./assets/App Store Screenshot 2.png" alt="Daily Nutrition Summary">
-                </div>
-                <div class="phone-mockup center">
-                    <img src="./assets/App Store Screenshot 3.png" alt="Meal Recognition Interface">
-                </div>
-                <div class="phone-mockup right">
-                    <img src="./assets/App Store Screenshot 4.png" alt="Nutrition History & Trends">
-                </div>
-            </div>
+
+    <div class="background-glow"></div>
+
+    <header class="main-header container">
+        <a href="#" class="logo">
+            <img src="./assets/icon.png" alt="NutriCam Logo" class="logo-icon">
+            <span class="logo-text">NutriCam</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#features">Features</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="#support">Support</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <h1 class="hero-title">Transform Your Health<br>With <span class="highlight">AI-Powered</span> Nutrition</h1>
+            <p class="hero-subtitle">Not just fitter. Not just thinner. Actually better. Clearer mind. More energy. Fewer cravings. Deeper sleep. Skin that glows without filters.</p>
+            <a href="https://apps.apple.com/us/app/nutricam-nutrition-tracker/id6745231558" class="cta-button" target="_blank" rel="noopener noreferrer">Download for iOS</a>
         </section>
 
-        <section class="AppStore">         
-            <div class="cta-section">
-                <a href="https://apps.apple.com/us/app/nutricam-nutrition-tracker/id6745231558" class="app-store-button" target="_blank" rel="noopener noreferrer">
-                    <img src="./app-store-button.svg" alt="Download on the App Store">
-                </a>
-                
-                <div class="features-preview">
-                    <span>AI Recognition</span>
-                    <div class="feature-dot"></div>
-                    <span>Macro Tracking</span>
-                    <div class="feature-dot"></div>
-                    <span>Health Insights</span>
+        <section class="showcase" id="features">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="slide"><img src="./assets/App Store Screenshot 2.png" alt="Daily Nutrition Summary"></div>
+                    <div class="slide"><img src="./assets/App Store Screenshot 3.png" alt="Meal Recognition Interface"></div>
+                    <div class="slide"><img src="./assets/App Store Screenshot 4.png" alt="Nutrition History & Trends"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
                 </div>
             </div>
+            <div class="carousel-pagination"></div>
         </section>
 
-        <section class="features-section">
+        <section class="features container">
+            <h2 class="section-title">A Smarter Way to Wellness</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3 class="feature-title">Clarity That Feels Like Magic</h3>
-                    <p class="feature-description">
-                        Your food, decoded in seconds.<br>
-                        Snap a meal and instantly see what it’s giving you—and what it’s not.<br>
-                        No logging. No guessing. Just confidence that you’re on track.
-                    </p>
+                    <p class="feature-description">Your food, decoded in seconds. Snap a meal and instantly see what it’s giving you—and what it’s not. No logging. No guessing. Just confidence that you’re on track.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3 class="feature-title">Personalized Insight You Can Feel</h3>
-                    <p class="feature-description">
-                        The app doesn’t just track—it translates.<br>
-                        From nutrient trends to deficiency warnings, it helps you connect what you eat to how you feel.<br>
-                        Because better days start with better decisions.
-                    </p>
+                    <p class="feature-description">The app doesn’t just track—it translates. From nutrient trends to deficiency warnings, it helps you connect what you eat to how you feel. Because better days start with better decisions.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">💎</div>
                     <h3 class="feature-title">Wellness That Matches Your Standards</h3>
-                    <p class="feature-description">
-                        You care about your body—and your experience.
-                        <br>Everything here feels smooth, intelligent, and elevated.
-                        <br>It’s nutrition tracking, reimagined to fit beautifully into your lifestyle.
-                    </p>
+                    <p class="feature-description">You care about your body—and your experience. Everything here feels smooth, intelligent, and elevated. It’s nutrition tracking, reimagined to fit beautifully into your lifestyle.</p>
                 </div>
             </div>
         </section>
+    </main>
+
+    <footer class="main-footer container" id="support">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+        </div>
+        <p class="footer-copyright">© 2025 NutriCam. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const wrapper = document.querySelector('.carousel-wrapper');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const pagination = document.querySelector('.carousel-pagination');
+
+        let currentIndex = 1; // Start with the center image
+        const slideCount = slides.length;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                let offset = index - currentIndex;
+                if (offset < -1) offset += slideCount;
+                if (offset > 1) offset -= slideCount;
+
+                let transform = '';
+                let opacity = 0.7;
+                let zIndex = 1;
+
+                if (offset === 0) {
+                    transform = 'rotateY(0) translateZ(0) scale(1)';
+                    opacity = 1;
+                    zIndex = 2;
+                } else if (offset === 1) {
+                    transform = 'rotateY(-30deg) translateX(150px) translateZ(-150px) scale(0.85)';
+                } else if (offset === -1) {
+                    transform = 'rotateY(30deg) translateX(-150px) translateZ(-150px) scale(0.85)';
+                } else {
+                    transform = 'scale(0.7)';
+                    opacity = 0;
+                }
+                
+                slide.style.transform = transform;
+                slide.style.opacity = opacity;
+                slide.style.zIndex = zIndex;
+            });
+            updatePagination();
+        }
         
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                <a href="#terms" class="footer-link">Terms of Service</a>
-                <a href="#support" class="footer-link">Support</a>
-            </div>
-            <p class="footer-text">
-                © 2025 NutriCam. All Rights Reserved.
-            </p>
-        </footer>
-    </div>
+        function updatePagination() {
+            pagination.innerHTML = '';
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('pagination-dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                pagination.appendChild(dot);
+            }
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Touch controls
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        carouselContainer.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+        carouselContainer.addEventListener('touchmove', (e) => touchEndX = e.touches[0].clientX);
+        carouselContainer.addEventListener('touchend', () => {
+            if (touchEndX === 0) return;
+            const diff = touchStartX - touchEndX;
+            if (diff > 50) nextSlide();
+            else if (diff < -50) prevSlide();
+            touchStartX = 0;
+            touchEndX = 0;
+        });
+
+        // Initial setup
+        updateCarousel();
+
+    </script>
+
 </body>
-</html> 
+</html>
