@@ -231,7 +231,7 @@
         <section class="hero container">
             <h1 class="hero-title">Transform Your Health<br>With <span class="highlight">AI-Powered</span> Nutrition</h1>
             <p class="hero-subtitle">Not just fitter. Not just thinner. Actually better. Clearer mind. More energy. Fewer cravings. Deeper sleep. Skin that glows without filters.</p>
-            <a href="https://apps.apple.com/us/app/nutricam-nutrition-tracker/id6745231558" class="cta-button" target="_blank" rel="noopener noreferrer">Download for iOS</a>
+            <a href="https://apps.apple.com/us/app/nutricam-nutrition-tracker/id6745231558" id="download-ios-button" class="cta-button" target="_blank" rel="noopener noreferrer">Download for iOS</a>
         </section>
 
         <section class="showcase" id="features">
@@ -275,7 +275,7 @@
         <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
             <!-- <a href="#">Terms of Service</a> -->
-            <a href="mailto:support@nutricam.app">Support</a>
+            <a id="support-link" href="mailto:support@nutricam.app">Support</a>
         </div>
         <p class="footer-copyright">© 2025 NutriCam. All Rights Reserved.</p>
     </footer>
@@ -370,5 +370,13 @@
 
     </script>
 
+    <script>
+      document.getElementById('download-ios-button').addEventListener('click', function() {
+        posthog.capture('download_ios_button_clicked');
+      });
+      document.getElementById('support-link').addEventListener('click', function() {
+        posthog.capture('support_link_clicked');
+      });
+    </script>
 </body>
 </html>
