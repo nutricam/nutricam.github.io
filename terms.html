@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Terms of Service | NutriCam</title>
+    <style>
+        @font-face {
+            font-family: 'DM Sans';
+            src: url('./fonts/DMSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'DM Sans';
+            src: url('./fonts/DMSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('./fonts/Inter-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./fonts/Manrope-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./fonts/Manrope-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #111827 0%, #1F2937 30%, #374151 100%);
+            min-height: 100vh;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        .header {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #10B981;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 12px 0;
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        }
+        
+        .back-link::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            right: -8px;
+            top: 4px;
+            bottom: 4px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .back-link:active::before {
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+
+        .back-link:hover {
+            color: #FFFFFF;
+        }
+
+        .page-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 1.1;
+            margin: 40px 0 16px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+                margin-top: 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 36px;
+                margin-top: 24px;
+            }
+        }
+
+        .last-updated {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #9CA3AF;
+            margin-bottom: 32px;
+        }
+
+        .content-section {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border-radius: 20px;
+            padding: 40px 32px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 32px 24px;
+                border-radius: 16px;
+                margin-bottom: 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-section {
+                padding: 24px 16px;
+                border-radius: 12px;
+                margin-bottom: 24px;
+            }
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+            border-radius: 24px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #10B981 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.3;
+        }
+        
+        @media (max-width: 768px) {
+            .content h2 {
+                font-size: 24px;
+                margin-top: 36px;
+                margin-bottom: 18px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content h2 {
+                font-size: 22px;
+                margin-top: 32px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            color: #FFFFFF;
+        }
+
+        .content p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #D1D5DB;
+            margin-bottom: 20px;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.2px;
+        }
+
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+        
+        .content li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #D1D5DB;
+            margin-bottom: 8px;
+            letter-spacing: 0.2px;
+        }
+
+        .content strong {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .highlight-text {
+            color: #10B981;
+            font-weight: 500;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 48px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-section h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+
+        .contact-section p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #D1D5DB;
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            color: #10B981;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid #10B981;
+            border-radius: 12px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: #10B981;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #6B7280;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #10B981;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            .header {
+                padding: 40px 0 30px;
+            }
+            
+            .page-title {
+                font-size: 40px;
+            }
+            
+            .content-section {
+                padding: 40px 32px;
+            }
+            
+            .contact-section {
+                padding: 32px 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 32px 0 20px;
+            }
+            
+            .page-title {
+                font-size: 32px;
+            }
+            
+            .content-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Home
+            </a>
+            <h1 class="page-title">Terms of Service</h1>
+            <p class="last-updated">Last updated: July 11, 2025</p>
+        </header>
+
+        <main class="content-section">
+            <div class="content">
+                <h2>1. Introduction</h2>
+                <p>Welcome to NutriCam! This Terms of Service Agreement (the “Agreement”) explains the terms and
+                conditions (“Terms and Conditions”) by which you may access and use NutriCam’s website,
+                mobile application(s), and any other tools, features, functionalities, or services (collectively, the
+                “Service”).</p>
+                <p>For purposes of this Agreement, “user”, “you”, and “your” means you as the user of the Service. If
+                you use the Service on behalf of a company or other entity then “you” includes you and that entity,
+                and you represent and warrant that (a) you are an authorized representative of the entity with the
+                authority to bind the entity to this Agreement, and (b) you agree to this Agreement on the entity’s
+                behalf.</p>
+                <p><strong>YOU SHOULD READ THIS TERMS OF SERVICE AGREEMENT CAREFULLY AS
+                IT CONTAIN IMPORTANT INFORMATION AND AFFECT YOUR LEGAL RIGHTS.
+                AS OUTLINED IN SECTION 9 BELOW, THEY INCLUDE A MANDATORY
+                ARBITRATION AGREEMENT.</strong></p>
+
+                <h2>2. Acceptance of Terms and Conditions</h2>
+                <p>BY ACCESSING OR USING THE SERVICE, YOU SIGNIFY THAT YOU HAVE READ,
+                UNDERSTOOD, AND AGREED TO FOLLOW AND BE BOUND BY THESE TERMS AND
+                CONDITIONS, INCLUDING THE POLICIES REFERENCED HEREIN, SUCH AS THE
+                PRIVACY POLICY AND THE MOBILE APPLICATION PRIVACY POLICY. IF YOU DO
+                NOT AGREE TO THIS AGREEMENT AND OTHER POLICIES MENTIONED HEREIN
+                IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE
+                SERVICE.</p>
+                <p>BY ACCESSING OR USING THE SERVICE, YOU REPRESENT AND WARRANT THAT:
+                (A) YOU HAVE FULL LEGAL AUTHORITY TO ENTER INTO THIS AGREEMENT; (B)
+                YOU HAVE READ AND UNDERSTAND THIS AGREEMENT; AND (C) YOU AGREE TO
+                THIS AGREEMENT.</p>
+                <p>You may not access or use the Service and you may not accept this Agreement if you are not legally
+                authorized to accept and be bound by its Terms and Conditions or are not at least 13 years of age
+                and, in any event, of a legal capacity to form a binding contract with NutriCam.</p>
+
+                <h2>3. Access and/or Use of the Service</h2>
+                <p>Your access or use of the Service may be interrupted from time to time for any of several reasons,
+                including, without limitation, the malfunction of equipment, periodic updating, maintenance or
+                repair of the Service or other actions that NutriCam, in its sole discretion, may elect to take. In no
+                event will NutriCam be liable to any party for any loss, cost, or damage that results from any
+                scheduled or unscheduled downtime or for discontinuation of the Service (including discontinuation
+                of mobile application(s) or deletion of any stored content).</p>
+                <p>NutriCam strongly encourages you to back-up all data and information prior to using the Service
+                and to independently verify messages received through the Service, particularly before sharing
+                potentially sensitive personal information. YOU ASSUME ALL RISKS AND ALL COSTS
+                ASSOCIATED WITH YOUR ACCESS OR USE OF THE SERVICE, INCLUDING, WITHOUT
+                LIMITATION, ANY INTERNET ACCESS FEES, BACK-UP EXPENSES, COSTS INCURRED
+                FOR THE USE OF YOUR DEVICE, AND ANY DAMAGE TO ANY EQUIPMENT,
+                SOFTWARE, INFORMATION OR DATA, OR FINANCIAL DAMAGE OR LOSS. In addition,
+                NutriCam is not obligated to provide any maintenance, technical, or other support for the Service.
+                Your sole and exclusive remedy for any failure or non-performance of the Service, including any
+                associated software or other materials supplied in connection with the Service, shall be for
+                NutriCam to use commercially reasonable efforts to effectuate an adjustment or repair of the
+                applicable service.</p>
+
+                <h2>4. License</h2>
+                <p>NutriCam grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Service, including the NutriCam mobile application, solely for your personal, non-commercial use and strictly in accordance with this Agreement. You agree not to reproduce, modify, distribute, create derivative works from, publicly display, or otherwise exploit any part of the Service without NutriCam’s prior written consent.</p>
+                <p>NutriCam reserves all rights not expressly granted to you under this Agreement.</p>
+
+                <h2>5. User Conduct</h2>
+                <p>You agree that you will not violate any law, contract, intellectual property, or other third-party right,
+                and that you are solely responsible for your conduct and content, while accessing or using the
+                Service. You also agree that you will not:</p>
+                <ul>
+                    <li>(a) upload, post, transmit or otherwise make available any content that is unlawful, harmful,
+                    threatening, abusive, harassing, tortuous, defamatory, vulgar, obscene, libelous, invasive of
+                    another’s privacy (including, but not limited to, any address, email, phone number, or any
+                    other contact information without the written consent of the owner of such information),
+                    hateful, discriminatory, or racially, ethnically or otherwise objectionable;</li>
+                    <li>(b) harm minors in any way;</li>
+                    <li>(c) impersonate any person or entity, including, but not limited to, a NutriCam or third-party
+                    provider manager, employee, agent, or representative or engages in phishing or fraud;</li>
+                    <li>(d) falsely state or otherwise misrepresent your affiliation with any person or entity;</li>
+                    <li>(e) forge headers or otherwise manipulate identifiers in order to disguise the origin of any
+                    material;</li>
+                    <li>(f) upload, post, or otherwise transmit any material that you do not have a right to transmit
+                    under any law or under contractual or fiduciary relationships (such as inside information,
+                    proprietary and confidential information learned or disclosed as part of employment
+                    relationships or under nondisclosure agreements);</li>
+                    <li>(g) upload, post or otherwise transmit any material that infringes any patent, trademark, trade
+                    secret, copyright, rights of privacy or publicity, or other proprietary rights of any party;</li>
+                    <li>(h) use any trademarks, copyrights, or other intellectual property of NutriCam or of a third
+                    party for any purpose without the prior express written consent of the respective owners;</li>
+                    <li>(i) upload, post, or transmit unsolicited commercial email or “SPAM,” including, but not
+                    limited to, unethical marketing, advertising, or any other practice that is in any way
+                    connected with SPAM, such as: (1) sending mass email to recipients who have not requested
+                    email from you or with a fake return address; or (2) promoting a site, security, or other
+                    product or service with inappropriate links, titles, or descriptions;</li>
+                    <li>(j) interfere with or disrupt the Service or servers or networks connected to the Service, or
+                    disobey any requirements, procedures, policies or regulations of networks connected to the
+                    Service;</li>
+                    <li>(k) intentionally or unintentionally violate any applicable local, state, national or international
+                    law, and any regulations having the force of law;</li>
+                    <li>(l) “stalk” or otherwise harass another user;</li>
+                    <li>(m) promote or provide instructional information about illegal activities, promote physical harm
+                    or injury against any group or individual, or promote any act of cruelty;</li>
+                    <li>(n) promote, offer for sale, or sell any item, good, or service that (i) violates any applicable
+                    federal, state, or local law or regulation, (ii) you do not have full power and authority under
+                    all relevant laws and regulations to offer and sell, including all necessary licenses and
+                    authorizations, or (iii) NutriCam determines, in its sole discretion, is inappropriate for sale;</li>
+                    <li>(o) use the Service as a forwarding service to another website; or</li>
+                    <li>(p) otherwise access or use the Service in any unlawful manner, for any unlawful purpose or in
+                    violation of these Terms and Conditions.</li>
+                </ul>
+                <p>You also represent and warrant that you will comply with all applicable laws (e.g., local, state,
+                federal and other laws) when using the Service. Without limiting the foregoing, by accessing or
+                using the Service, you represent and warrant that: (a) you are not located in, ordinarily resident in,
+                or organized under the laws of any jurisdiction that is subject to a comprehensive U.S. Government
+                embargo ("Embargoed Jurisdiction"); (b) you are not subject to any sanctions administered by an
+                agency of the U.S. Government, any other government, or the United Nations (collectively,
+                “Sanctions”); (c) you are not owned or controlled, directly or indirectly, by any person that is
+                subject to Sanctions, or that is located in, ordinarily resident in, or organized under the laws of, any
+                Embargoed Jurisdiction; (d) none of your officers, managers, directors, shareholders or authorized
+                representatives is subject to Sanctions, or is located in, ordinarily resident in, or organized under the
+                laws of, any Embargoed Jurisdiction, or is owned or controlled, directly or indirectly, by any person
+                that is subject to Sanctions or that is located in, ordinarily resident in, or organized under the laws
+                of, any Embargoed Jurisdiction. You further covenant that the foregoing shall be true during the
+                entire period of this agreement. If you access or use the Service outside the United States, you are
+                solely responsible for ensuring that your access or use of the Service in such country, territory or
+                jurisdiction does not violate any applicable laws.</p>
+                <p>NutriCam may be required to provide certain of your data in particular circumstances, such as at
+                the request of any government authority, as any applicable law or regulation dictates, or to
+                investigate a potential violation of these Terms and Conditions. In such cases, NutriCam, in its sole
+                discretion, may disable your Account and block your ability to access the Service until such
+                additional information and documents are processed by NutriCam. If you do not provide complete
+                and accurate information in response to such a request, NutriCam may refuse to restore your
+                access to the Service.</p>
+
+                <h2>6. Electronic Communications</h2>
+                <p>By using the Service or “Third-Party Content” (as defined below), you consent to any form of
+                recording and retention of any communication, information, and data exchanged between you and
+                NutriCam or its representatives or agents, or transmitted by NutriCam and its Service. Some
+                communications made at or through the Service may be subject to analysis or discovery.</p>
+                <p>The communications between you and NutriCam use electronic means, whether you access or use
+                the website, mobile application(s), or send us e-mails, or whether NutriCam posts notices on the
+                website or communicates with you via e-mail or through NutriCam’s mobile application(s). For
+                contractual purposes, you (a) consent to receive communications from NutriCam in an electronic
+                form; and (b) agree that all Terms and Conditions, agreements, notices, disclosures, and other
+                communications that NutriCam provides to you electronically satisfy any legal requirement that
+                such communications would satisfy if it were in a hardcopy writing. The foregoing does not affect
+                your non-waivable rights.</p>
+                <p>NutriCam may from time to time cause you to receive automatic alerts or notifications. Automatic
+                alerts or notifications may be sent to you following certain changes to your account or information,
+                such as a change in your registration information. Automatic alerts or notifications may also be sent
+                to you as a feature of the Service. NutriCam may add new alerts or notifications from time to time,
+                or cease to provide certain alerts/notifications at any time upon its sole discretion. NutriCam shall
+                not be liable for any delays, failure to deliver, or misdirected delivery of any alert or notification; for
+                any errors in the content of an alert or notification; or for any actions taken or not taken by you or
+                any third party in reliance on an alert or notification.</p>
+                <p>Electronic alerts and notifications may be sent to a user’s e-mail address, mobile application(s), or
+                mobile number provided by you to NutriCam. If your e-mail address or your mobile number
+                changes, you are responsible for informing us of that change. Alerts and notifications may also be
+                sent to a mobile device that accepts text messages. Changes to your e-mail address and mobile
+                number will apply to all of your alerts.</p>
+
+                <h2>7. Third-Party Content and Assumption of Risk</h2>
+                <p>The Service may transmit, include, store, or make available certain original and third-party content
+                (collectively the “Third-Party Content”). Third-Party Content includes, without limitation: (1)
+                nutritional data and metrics; (2) ingredients list and related data; (3) personalized nutritional
+                information and analytic, such as daily recommendations for calories, macronutrients, vitamins, and
+                minerals; (4) AI-driven or machine learning outputs used to generate, supplement, or analyze user
+                data (e.g., photos, voice recordings) for informational or educational purposes; (5) any other
+                information, data, content, services, software, or products created by a third-party; and (6)
+                third-party names, logos, product and service names, trade names, trademarks and services marks.</p>
+                <p>NutriCam does not review, approve, monitor, endorse, prepare, edit, warrant, inspect, verify, or
+                make any representations with respect to Third-Party Content, and does not purport to take
+                responsibility for or guarantee the substance, correctness, timeliness, completeness, usefulness, or
+                delivery of Third-Party Content. NutriCam is not responsible or liable for any content, advertising,
+                products, or other materials on or available from third-party sites.</p>
+                <p>You will not hold NutriCam liable in any way for (a) any inaccuracy of, error or delay in, or
+                omission of the Third-Party Content (including original or mixed content); or (b) any loss or
+                damage arising from or occasioned by: (i) any error or delay in the transmission of such Third-Party
+                Content; (ii) interruption in any such Third-Party Content due either to any negligent act or
+                omission by any party to any “force majeure” (e.g., flood, extraordinary weather conditions,
+                earthquake, epidemic, pandemic, public health crisis, or other act of God, fire, war, insurrection,
+                riot, labor dispute, accident, action of government, communications or power failure, equipment or
+                software malfunction), or (iii) to any other cause beyond the reasonable control of NutriCam, or
+                (iv) non-performance.</p>
+
+                <h2>8. Disclaimers and Limitations of Liability</h2>
+                <p>The Third-Party Content and Service are provided on an “AS IS” and “AS AVAILABLE” basis. To
+                the fullest extent permitted under applicable law, NutriCam expressly disclaims all warranties of
+                any kind with respect to Third-Party Content and Service, whether express or implied, including,
+                but not limited to, the implied warranties of merchantability, fitness for a particular purpose and
+                non-infringement. NutriCam does not guarantee the accuracy, timeliness, completeness or
+                usefulness of any Third-Party Content (including original and mixed content). You agree to use
+                Third-Party Content and the Service only at your own risk. Specifically, you agree that NutriCam
+                is not responsible for how you choose to use its Service or Third-Party Content.</p>
+                <p>NutriCam WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT
+                LIMITED TO, DAMAGES FOR LOSS OF PROFITS, REVENUE, INCOME, GOODWILL, USE,
+                DATA OR OTHER INTANGIBLE LOSSES (EVEN IF NutriCam HAS BEEN ADVISED OF
+                THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM: (1) THE USE OF OR THE
+                INABILITY TO USE THIRD-PARTY CONTENT OR THE SERVICE; (2) THE COST OF
+                PROCUREMENT OF SUBSTITUTE GOODS AND SERVICES RESULTING FROM ANY
+                GOODS, DATA, INFORMATION OR SERVICES PURCHASED OR OBTAINED OR
+                MESSAGES RECEIVED OR TRANSACTIONS ENTERED INTO, THROUGH OR FROM THE
+                SERVICE; (3) ACCESS TO OR ALTERATION OF YOUR ACCOUNT, DATA,
+                TRANSMISSIONS, OR DATA DUE TO YOUR CONDUCT, INACTION OR NEGLIGENCE; OR
+                (4) ANY OTHER MATTER RELATING TO THIRD-PARTY CONTENT OR THE SERVICE.</p>
+                <p><strong>PROFESSIONAL DISCLAIMER:</strong> The Service cannot and does not contain medical/health advice.
+                Any nutritional or health-related information is provided for general informational and educational
+                purposes only and is not a substitute for relevant professional or medical advice. Accordingly,
+                before taking any actions based upon such information, we encourage you to consult with the
+                appropriate professionals. THE USE OR RELIANCE OF ANY INFORMATION CONTAINED
+                ON THE SERVICE, SITE OR OUR MOBILE APPLICATION IS SOLELY AT YOUR OWN
+                RISK.</p>
+
+                <h2>9. Arbitration</h2>
+                <p>Please read this section (“Arbitration Clause”) carefully. It is part of your agreement with
+                NutriCam and affects your rights.</p>
+                <p>THE PARTIES HEREBY WAIVE THEIR CONSTITUTIONAL AND STATUTORY RIGHTS TO
+                GO TO COURT AND HA VE A TRIAL IN FRONT OF A JUDGE OR A JURY , instead electing
+                that all claims and disputes shall be resolved by arbitration under this Arbitration Clause.
+                Arbitration procedures are typically more limited, more efficient, and less costly than rules
+                applicable in a court and are subject to very limited review by a court. In the event any litigation
+                should arise between you and NutriCam in any state or federal court in a suit to vacate or enforce
+                an arbitration award or otherwise, YOU AND NutriCam WAIVE ALL RIGHTS TO A JURY
+                TRIAL, instead electing that the dispute be resolved by a judge.</p>
+                <p>ALL CLAIMS AND DISPUTES WITHIN THE SCOPE OF THIS ARBITRATION CLAUSE
+                MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A
+                CLASS BASIS, AND CLAIMS OF MORE THAN ONE CUSTOMER OR USER CANNOT BE
+                ARBITRATED OR LITIGATED JOINTLY OR CONSOLIDATED WITH THOSE OF ANY
+                OTHER CUSTOMER OR USER.</p>
+                <p>The Federal Arbitration Act governs the interpretation and enforcement of this provision; the
+                arbitrator shall apply Delaware law to all other matters. All issues are for the arbitrator to decide,
+                including issues related to scope and enforceability of this arbitration provision. Notwithstanding
+                anything to the contrary, any party to the arbitration may at any time seek injunctions or other forms
+                of equitable relief from any court of competent jurisdiction.</p>
+                <p>Before either party may seek arbitration, the party must first send to the other party a written Notice
+                of Dispute (“Notice”) describing the nature and basis of the claim or dispute, and the requested
+                relief. A Notice to the Company should be sent to: NutriCam, support@NutriCamapp.com. After the
+                Notice is received, you and NutriCam may attempt to resolve the claim or dispute informally. If
+                you and NutriCam do not resolve the claim or dispute within thirty (30) days after the Notice is
+                received, either party may begin an arbitration proceeding.</p>
+                <p>Arbitration will be conducted by the American Arbitration Association (AAA) before a single AAA
+                arbitrator under the AAA’s rules, which are available at www.adr.org or by calling 1-800-778-7879.
+                Payment of all filing, administration and arbitrator fees and costs will be governed by the AAA's
+                rules. You may choose to have the arbitration conducted by telephone, based on written
+                submissions, or in person in the county where you live or at another mutually agreed location. The
+                decision of the arbitrator shall be final and not appealable, and judgment on the arbitration award
+                may be entered in any court having jurisdiction thereof. This Arbitration Clause shall survive
+                expiration, termination, or rescission of this Agreement.</p>
+
+                <h2>10. Indemnification</h2>
+                <p>You will indemnify and hold harmless NutriCam and its officers, directors, agents, partners,
+                employees, licensors, distributors, representatives, and affiliates from and against any and all
+                claims, demands, actions, causes of action, suits, proceedings, losses, damages, costs, and expenses,
+                including reasonable attorneys’ fees, arising from or relating to your access and/or use of or
+                interaction with the Third-Party Content, or any act, error, or omission of your use of your account
+                or any user of your account, in connection therewith, including, but not limited to, matters relating
+                to incorrect, incomplete, or misleading information; libel; invasion of privacy; infringement of a
+                copyright, trade name, trademark, service mark, or other intellectual property; any defective product
+                or any injury or damage to person or property caused by any products sold or otherwise distributed
+                through or in connection with the Service; or violation of any applicable law.</p>
+
+                <h2>11. Service Fees</h2>
+                <p>NutriCam currently operates on a freemium model. This means that certain features of the Service are available free of charge, while access to premium features may require a paid subscription or in-app purchase. NutriCam may, at its sole discretion and without prior notice, modify which features are available for free or introduce new paid offerings at any time.</p>
+                <p>Paid features may include, but are not limited to, advanced analytics, personalized insights, historical tracking, and AI-enhanced functionalities. Subscriptions, if offered, may be billed on a monthly or annual basis through the Apple App Store or other designated platforms. Trial periods may be made available from time to time and will automatically convert into a paid subscription unless cancelled before the trial period ends.</p>
+                <p>You are responsible for reviewing the applicable fees, features, and billing terms before making any purchase. All subscription management, billing, and cancellations are handled through the Apple App Store (or the respective platform through which you subscribed), and you agree to comply with their payment policies.</p>
+                <p>NutriCam reserves the right to modify pricing, introduce additional payment tiers, offer promotional pricing, or discontinue any aspect of the freemium model at any time.</p>
+
+                <h2>12. Advertising and Sponsored Content</h2>
+                <p>NutriCam may display advertisements, sponsored content, or promotional materials within the Service. These ads help support the continued development and availability of the Service, especially for users accessing free or trial versions. By using the Service, you acknowledge and agree that:</p>
+                <ul>
+                    <li>Ads may be served by NutriCam or third-party advertising networks (e.g., Google AdMob, AppLovin).</li>
+                    <li>These third parties may use tracking technologies (such as device identifiers or cookies) to deliver targeted advertising based on your interests or usage patterns.</li>
+                    <li>NutriCam is not responsible for the content of third-party ads or the accuracy of any claims made in them.</li>
+                    <li>Your interaction with any advertisements or third-party services is solely between you and the advertiser.</li>
+                </ul>
+                <p>If you are located in a jurisdiction that requires user consent for personalized ads (e.g., the European Economic Area), NutriCam will seek your consent through an appropriate Consent Management Platform (CMP) before serving personalized advertising.</p>
+                <p>Please review our Privacy Policy for details on how your data may be used for advertising purposes.</p>
+
+                <h2>13. Termination</h2>
+                <p>You agree that, without notice, NutriCam may terminate these Terms and Conditions, or suspend
+                your access to the Service or the Third-Party Content, with or without cause at any time and
+                effective immediately. These Terms and Conditions will terminate immediately without notice from
+                NutriCam if you, in NutriCam’s sole determination, fail to comply with any provision of these
+                Terms and Conditions. NutriCam shall not be liable to you or any third party for the termination or
+                suspension of the Service or the Content, or any claims related to such termination or suspension.</p>
+                <p>NutriCam may discontinue or modify the Third-Party Content, or any portion thereof, at any time.
+                You release and agree to indemnify and hold harmless NutriCam for any loss or damages arising
+                from or relating to such discontinuation or modification.</p>
+
+                <h2>14. Applicable Law and Venue</h2>
+                <p>You agree that this Agreement shall be governed by and interpreted in accordance with the laws of
+                the State of Delaware, without giving effect to principles of conflicts of law. To the extent
+                allowable, beyond the arbitration clause below, any legal action or proceeding arising under this
+                Agreement will be brought exclusively in courts located in Wilmington, Delaware, and you
+                irrevocably consent to the personal jurisdiction and venue therein.</p>
+
+                <h2>15. Severability</h2>
+                <p>If any provision of this Agreement is deemed unlawful, void or for any reason unenforceable, then
+                that provision will be deemed severable from every other provision of the Agreement, and will not
+                affect the validity and enforceability of the remaining provisions.</p>
+
+                <h2>16. Revisions to these Terms and Conditions</h2>
+                <p>NutriCam may at any time revise these Terms and Conditions by updating this Agreement. You
+                agree to be bound by subsequent revisions and agree to review these Terms and Conditions
+                periodically for changes. The most updated version of this document will be available for your
+                review under the “Terms of Service” link that appears on NutriCam’s website.</p>
+
+                <h2>Copyright</h2>
+                <p>Copyright © 2025 NutriCam. All rights reserved. All trademarks, logos and service marks
+                (“Marks”) displayed on the Site are our property or the property of other third parties. You are not
+                permitted to use these Marks without our prior written consent or the consent of such third party
+                which may own the Marks.</p>
+            </div>
+        </main>
+
+        <section class="contact-section">
+            <h3>Have Questions?</h3>
+            <p>If you have any questions about this Terms of Service, please contact us.</p>
+            <a href="mailto:team@nutricam.app" class="contact-email">support@nutricam.app</a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+                <a href="mailto:support@nutricam.app" class="footer-link">Support</a>
+            </div>
+            <p class="footer-text">© 2025 NutriCam. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
