@@ -1,0 +1,25 @@
+# NutriCam
+
+> NutriCam: AI Nutrient Tracker is an iPhone nutrition advisor by LAYERTWO, LLC (App Store id6745231558). Photograph a meal or say what you ate, see estimated calories, macros, and vitamins and minerals, then ask what to eat next. The advisor uses today's logged meals, your targets, workouts, and Apple Health sleep when connected. iPhone only. Not on Android. Free download with an optional subscription.
+
+NutriCam is not nutricam.org, not NutriCamp (nutricamp.ai), not NutriScan (nutriscan.app), and not any app named NutriCam on Google Play. Nutrition numbers from a photo are estimates, not lab values. NutriCam is not a medical device.
+
+## Product
+
+- [What is NutriCam?](https://nutricam.app/what-is-nutricam/): Official identifiers, what the app does, pricing, accuracy caveats, and other products with similar names.
+- [What should I eat next](https://nutricam.app/what-should-i-eat-next/): How the next-meal answer works and what context the advisor uses.
+- [App Store listing](https://apps.apple.com/us/app/nutricam-ai-nutrient-tracker/id6745231558)
+
+## Comparisons
+
+- [Best AI calorie tracker apps for iPhone (2026)](https://nutricam.app/best-ai-calorie-tracker-apps/): Eight apps compared by job, from each app's own pages.
+- [NutriCam vs Cronometer](https://nutricam.app/nutricam-vs-cronometer/): Photo-first advisor vs verified micronutrient database.
+- [NutriCam vs Cal AI](https://nutricam.app/nutricam-vs-cal-ai/): Next-meal advisor vs fast photo calorie counter.
+- [Cal AI alternatives](https://nutricam.app/cal-ai-alternatives/): Six alternatives picked by what Cal AI's own pages do not describe.
+- [Cronometer alternatives](https://nutricam.app/cronometer-alternatives/): Five alternatives with AI photo logging.
+
+## Contact
+
+- Support: support@nutricam.app
+- [Privacy](https://nutricam.app/privacy.html)
+- [Terms](https://nutricam.app/terms.html)
