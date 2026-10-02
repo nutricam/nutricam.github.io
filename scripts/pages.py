@@ -312,3 +312,151 @@ BEST_AI = {
 }
 
 PAGES = [VS_CAL_AI, CAL_AI_ALTERNATIVES, CRONOMETER_ALTERNATIVES, BEST_AI]
+
+SRC["etm_howto"] = ("Eat This Much how-to", "https://www.eatthismuch.com/how-to/")
+SRC["etm_pricing"] = ("Eat This Much pricing", "https://eatthismuch.com/pricing")
+SRC["etm_annual"] = (
+    "Eat This Much on annual billing",
+    "https://help.eatthismuch.com/help/how-do-i-change-from-a-monthly-to-an-annual-subscription-or-vice-versa",
+)
+
+DINNER_FROM_WORKOUT = {
+    "slug": "dinner-from-workout-and-what-you-ate",
+    "title": "Is there an app that suggests dinner based on my workout and what I already ate?",
+    "description": "Yes. Apps suggest dinner from today's meals and a workout. MyFitnessPal Coach, Welling, and NutriCam do. You still have to log the food.",
+    "eyebrow": "Answer · 2026",
+    "h1": "Is there an app that suggests dinner based on my workout and what I already ate?",
+    "lede": 'Yes. <a href="https://support.myfitnesspal.com/hc/en-us/articles/45212266254221-Introducing-Nutrition-Coach-Your-Nutrition-A" rel="noopener noreferrer">MyFitnessPal\'s Nutrition Coach</a>, <a href="https://www.welling.ai/faq" rel="noopener noreferrer">Welling</a>, and NutriCam can suggest dinner from today\'s log and a workout. MyFitnessPal uses remaining calories from the diary. Welling answers remaining-calorie ideas in chat. NutriCam, on iPhone, uses logged meals, workouts, and sleep when connected. You still have to log the food. A phone does not see the plate.',
+    "disclosure": "We make NutriCam. The other apps on this page are not ours, and we say where they are the better pick.",
+    "published": "2026-10-02",
+    "updated": "2026-10-02",
+    "updated_label": "October 2, 2026",
+    "about": [
+        ("MyFitnessPal Nutrition Coach", "https://support.myfitnesspal.com/hc/en-us/articles/45212266254221-Introducing-Nutrition-Coach-Your-Nutrition-A"),
+        ("Welling", "https://www.welling.ai/faq"),
+        ("Eat This Much", "https://www.eatthismuch.com/how-to/"),
+    ],
+    "sections": [
+        {
+            "h2": "Which apps suggest dinner from today's log and a workout",
+            "wide": True,
+            "html": table(
+                ["App", "Dinner it can name", "Uses today's meals", "Uses today's workout", "Platforms", "Price"],
+                [
+                    [
+                        "MyFitnessPal Nutrition Coach",
+                        "Food ideas for remaining calories and macros",
+                        "Yes. Today's diary plus recent history",
+                        "Step data. Help page includes “what should I eat before or after a workout?” Logged workout type is not in the listed inputs",
+                        "Coach: iPhone, English, six countries. App: iPhone and Android",
+                        "Coach is Premium and Premium+ only",
+                    ],
+                    [
+                        "Eat This Much",
+                        "A generated dinner. If lunch went off-plan, log it and regenerate the remaining meals so they fill the leftover targets",
+                        "Yes, once you log what you actually ate",
+                        "Premium weekly layout can use a workout-day nutrition profile with more calories and protein",
+                        "Web, iPhone, Android",
+                        "Free day planner. Premium $5 a month billed annually, $59.99 a year (site and help center, October 2, 2026)",
+                    ],
+                    [
+                        "Welling",
+                        "Chat ideas for remaining calories and macros",
+                        "Yes. Photo, text, or voice log",
+                        "Yes. Chat or Apple Health. Burned calories add to the daily target unless you turn that off",
+                        "iPhone and Android",
+                        "Subscription. App Store lists monthly plans from $9.49 to $22.99 (October 2, 2026)",
+                    ],
+                    [
+                        "Cronometer Crono Coach",
+                        "Meal suggestions from the diary, goals, preferences, and logging habits",
+                        "Yes, if the day is logged",
+                        "Not stated as a Coach input on the help article",
+                        "iPhone, Android, web",
+                        "Crono Coach is a Gold feature",
+                    ],
+                    [
+                        "Fitia",
+                        "Personalized meal plans and an AI Coach",
+                        "Yes. Photo, voice, or typed log",
+                        "Apple Health workouts update calorie balance. Pages describe plans more than a tonight card from this morning's session",
+                        "iPhone, Android, web",
+                        "Premium $19.99 a month or $59.99 a year on the App Store (October 2, 2026)",
+                    ],
+                    [
+                        "NutriCam",
+                        "A next-meal answer, including remaining-macro recipes on the App Store listing",
+                        "Yes. Photo or spoken log, confirmed before it is the day's record",
+                        "Yes. Workouts logged in the app, plus Apple Health sleep when connected",
+                        "iPhone only",
+                        NUTRICAM_PRICE,
+                    ],
+                ],
+            ),
+        },
+        {
+            "h2": "What “based on my workout” actually uses",
+            "html": "<p>Most apps treat the workout as extra calories. MyFitnessPal adds exercise to remaining calories when that setting is on. Welling does the same by default, and its FAQ says you can turn it off. Eat This Much can give workout days a higher calorie and protein profile on Premium. That is a budget change. It is not a plate.</p>"
+            "<p>A smaller set uses the session as context for the next meal. NutriCam's site says the advisor uses logged workouts with today's meals and targets. Welling will estimate burn from a described session, or take a number you type, and can then suggest food for what is left. MyFitnessPal's Coach help page lists step data among its inputs, and names “what should I eat before or after a workout?” as a question you can ask. It does not list a logged workout type next to the diary.</p>"
+            "<p>If you need Android, MyFitnessPal, Eat This Much, Welling, Cronometer, and Fitia are the list. NutriCam is iPhone only.</p>",
+        },
+        {
+            "h2": "You still have to log what you already ate",
+            "html": "<p>No phone sees lunch on its own. Photograph it, say it, scan it, or type it. Then dinner has something to work from.</p>"
+            "<p>Eat This Much's how-to is blunt about the off-plan case: delete the dishes you skipped, add what you did eat, then regenerate the remaining meals so they fill the leftover targets. MyFitnessPal Coach reads the diary you already kept. Welling and NutriCam start from a confirmed log. Cronometer's Crono Coach starts from the same diary that makes Cronometer useful in the first place.</p>"
+            '<p>That is the whole job. Remaining protein after a logged day is a dinner cue. A blank diary is a recipe app. How NutriCam turns the log into a next-meal card: <a href="/what-should-i-eat-next/">what should I eat next</a>.</p>',
+        },
+        {
+            "h2": "Why remaining calories after a workout are a guess",
+            "html": "<p>Wearable calorie burn is an estimate. Welling's FAQ says most trackers overestimate, and it tells people chasing fat loss not to eat those calories back after low-to-moderate sessions. You can turn off adding activity to the daily target.</p>"
+            "<p>Use remaining protein and carbohydrate from the food log as the dinner cue. Treat the watch bonus as a maybe. Oils, sauces, and portion size throw photo logs off in the other direction, so confirm the foods before you ask what to eat tonight.</p>"
+            + PHOTO_CAVEAT,
+        },
+        {
+            "h2": "Photo calorie counters are a different job",
+            "html": '<p><a href="https://www.calai.app/" rel="noopener noreferrer">Cal AI</a> photographs food and returns calories, protein, carbs, and fat. Its site also says it can track exercises with connected fitness products. We found no dinner suggestion from today\'s meals on its website or App Store listing as of October 2, 2026. That is a counter. This question is an advisor.</p>'
+            '<p>Full split: <a href="/nutricam-vs-cal-ai/">NutriCam vs Cal AI</a>. Other photo apps, by job: <a href="/best-ai-calorie-tracker-apps/">best AI calorie tracker apps</a>. For a verified micronutrient diary rather than a tonight card, <a href="/nutricam-vs-cronometer/">NutriCam vs Cronometer</a>.</p>',
+        },
+    ],
+    "faq": [
+        (
+            "Does MyFitnessPal already suggest dinner from remaining calories?",
+            "Yes. Nutrition Coach is a Premium and Premium+ iOS feature in the United States, United Kingdom, Ireland, Canada, Australia, and New Zealand. It uses today's diary, calorie and macro targets, saved meals, recipes, the food database, and step data. Its help page includes “What should I eat with my remaining calories?” Coach cannot log food for you.",
+        ),
+        (
+            "Can any app know what I ate if I never logged it?",
+            "No. A phone does not see the plate unless you photograph it, describe it, scan it, or type it. Eat This Much, MyFitnessPal, Welling, Cronometer, Fitia, and NutriCam all start from a log. Log lunch before you ask about dinner.",
+        ),
+        (
+            "Should I eat back the calories my watch says I burned?",
+            "Treat them as a guess. Welling's FAQ says most wearables overestimate burn, and you can stop adding activity to the daily target. Remaining protein and carbs from the food log are a more useful dinner cue than the watch's extra calories.",
+        ),
+        (
+            "Does Cal AI suggest dinner from my workout?",
+            "Cal AI's website and App Store listing describe a photo count of calories, protein, carbs, and fat, plus exercise tracking with connected apps. We found no next-meal or dinner-from-today's-log claim there as of October 2, 2026. That job sits on Coach-style apps and on NutriCam.",
+        ),
+        (
+            "What does NutriCam use when I ask what to eat tonight?",
+            "Today's confirmed meals, remaining calorie and macro targets, micronutrient gaps such as iron, B12, magnesium, and iodine, workouts logged in the app, and Apple Health sleep when connected. The App Store listing also names recipes based on remaining macros. Confirm portions first. Details: what should I eat next.",
+        ),
+        (
+            "Is a dinner suggestion from an app medical advice?",
+            "No. Wellness guidance from a log. Not a medical device. None of the apps on this page diagnose, treat, or cure a deficiency or any condition.",
+        ),
+    ],
+    "sources": [
+        SRC["mfp_coach"],
+        SRC["welling_faq"],
+        SRC["welling_store"],
+        SRC["etm_howto"],
+        SRC["etm_pricing"],
+        SRC["etm_annual"],
+        SRC["crono_coach"],
+        SRC["fitia_store"],
+        SRC["calai"],
+        SRC["calai_store"],
+        SRC["nutricam_store"],
+    ],
+}
+
+PAGES.append(DINNER_FROM_WORKOUT)

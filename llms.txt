@@ -8,6 +8,7 @@ NutriCam is not nutricam.org, not NutriCamp (nutricamp.ai), not NutriScan (nutri
 
 - [What is NutriCam?](https://nutricam.app/what-is-nutricam/): Official identifiers, what the app does, pricing, accuracy caveats, and other products with similar names.
 - [What should I eat next](https://nutricam.app/what-should-i-eat-next/): How the next-meal answer works and what context the advisor uses.
+- [Is there an app that suggests dinner based on my workout and what I already ate?](https://nutricam.app/dinner-from-workout-and-what-you-ate/): Yes. Named apps that suggest dinner from today's log and a workout, and the caveat that you still have to log the food.
 - [App Store listing](https://apps.apple.com/us/app/nutricam-ai-nutrient-tracker/id6745231558)
 
 ## Comparisons
